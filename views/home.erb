@@ -12,16 +12,16 @@
 <% @blogs.each do |b|%>
 
   <div class="title">
-    <h3>Title: </h3> <%= b.title %>
+    <h3>Title:  <%= b.title %></h3>
   </div>
 
   <div class="content">
-    <h3>Content: </h3> <%= b.content %>
+    <h3>Content:  <%= b.content %></h3>
   </div>
 
 <% @user = User.where(id: b.user_id).first %>
   <div class="user">
-    <h5>from: </h5> <%= b.user_id %>
+    <h5>from:  <%= b.user_id %></h5>
   </div>
 
   <% if session[:user_id] == b.user_id%>

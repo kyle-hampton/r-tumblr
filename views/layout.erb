@@ -23,30 +23,30 @@
             <ul>
               <% if session[:user_id]%>
               <% user = User.find(session[:user_id]) %>
-              <li> <a href="/<% user.username %>"> Home </a> </li>
+              <li class="li"> <a href="/<% user.username %>"> Home </a> </li>
               <% else %>
-              <li> <a href="/"> Home </a> </li>
+              <li class="li"> <a href="/"> Home </a> </li>
               <% end %>
 
               <% puts "Session id = " + session[:user_id].to_s%>
 
               <%if session[:user_id] == nil %>
                 <ul>
-                  <li> <a href="/signup"> Sign up </a> </li>
-                  <li> <a href="/login"> login </a> </li>
+                  <li class="li"> <a href="/signup"> Sign up </a> </li>
+                  <li class="li"> <a href="/login"> login </a> </li>
                 </ul>
 
                 <% elsif session[:user_id] != nil %>
-                    <ul>
-                      <li> <a href="/new-post"> Create Post</a> </li>
-                      <li> <a href="/account/<%= session[:user_id]%>"> Account</a> </li>
-                      <li>
+                    
+                      <li class="li"> <a href="/new-post"> Create Post</a> </li>
+                      <li class="li"> <a href="/account/<%= session[:user_id]%>"> Account</a> </li>
+                      <li class="li">
                         <form class="" action="/logout" method="post">
                           <input type="submit" value="logout">
                         </form>
-                      </li>
+                      </li class="li">
 
-                    </ul>
+
                 <% end %>
 
             </ul>
@@ -63,7 +63,13 @@
   </div>
 
     <div class="footer">
-      <footer>copy rights 2018</footer>
+      <ul class="ul">
+        <li class="foot">Membership</li>
+        <li class="foot">Contant</li>
+        <li class="foot">Report</li>
+        <li class="foot">Careers</li>
+      </ul>
+      <footer>Copy Rights 2018</footer>
     </div>
 
   </body>
