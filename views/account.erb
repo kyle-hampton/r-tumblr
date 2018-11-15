@@ -1,0 +1,15 @@
+<h2>Account</h2>
+
+
+<h3>Name</h3>
+<h4><%= @user.first_name%> <% " " %><%= @user.last_name%> </h4>
+
+<h3>Email</h3>
+<h4><%= @user.email%></h4>
+
+<h3>birthday</h3>
+<h4><%= @user.birthday%></h4>
+
+<form class="" action="/deleteAccount" method="get">
+  <input type="submit" name="" value="Delete Account">
+</form>

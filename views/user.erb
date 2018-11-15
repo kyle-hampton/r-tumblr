@@ -1,0 +1,31 @@
+
+<h1>hello <%= @user.username%></h1>
+
+<h2>Thread lists</h2>
+
+<hr>
+
+<% @blogs.each_with_index do |b|%>
+
+  <div class="title">
+    <h3>Title: </h3> <%= b.title %>
+  </div>
+
+  <div class="content">
+    <h3>Content: </h3> <%= b.content %>
+  </div>
+
+  <div class="content">
+    <% if session[:user_id] == b.user_id%>
+
+    <% user = User.find(session[:user_id]) %>
+    <%= user.username %>
+    <% end %>
+  </div>
+  <% if session[:user_id] == b.user_id%>
+  <% user = User.find(session[:user_id]) %>
+    <a href="/currentBlog/<%= b.id %>"> <h4>Update</h4> </a>
+  <% end %>
+    <hr>
+
+<% end %>

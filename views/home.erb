@@ -1,0 +1,33 @@
+<% if session[:user_id]%>
+<% user = User.find(session[:user_id]) %>
+  <h2>Hello <%= user.username %></h2>
+<% else %>
+  <h1></h1>
+<% end %>
+
+<h2>Thread lists</h2>
+
+<hr>
+
+<% @blogs.each do |b|%>
+
+  <div class="title">
+    <h3>Title: </h3> <%= b.title %>
+  </div>
+
+  <div class="content">
+    <h3>Content: </h3> <%= b.content %>
+  </div>
+
+<% @user = User.where(id: b.user_id).first %>
+  <div class="user">
+    <h5>from: </h5> <%= b.user_id %>
+  </div>
+
+  <% if session[:user_id] == b.user_id%>
+  <% user = User.find(session[:user_id]) %>
+    <a href="/currentBlog/<%= user.username %>"> <h4>Update</h4> </a>
+  <% end %>
+
+  <hr>
+<% end %>

@@ -1,0 +1,12 @@
+<h3>Create a blog posts</h3>
+<div class="blog-creation">
+
+  <form action="/blog_input" method="post">
+    <h3>Title</h3>
+    <input type="text" name="title" value="">
+    <h3>Content</h3>
+    <textarea name="content"></textarea>
+    <input type="hidden" name="user_id" value="<%= session[:user_id] %>">
+    <input type="submit">
+  </form>
+</div>

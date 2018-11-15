@@ -1,0 +1,12 @@
+<h2>Post</h2>
+<div> <%= @blog.id %> </div>
+<div> <%= @blog.title %> </div>
+<div> <%= @blog.content %> </div>
+
+<hr>
+<a href="/currentBlog/<%= @blog.id %>/edit"> <input type="submit" value="update"></a>
+
+<hr>
+<form action="/destroy/<%= @blog.id %>" method="post">
+  <input type="submit" value="delete blog">
+</form>
